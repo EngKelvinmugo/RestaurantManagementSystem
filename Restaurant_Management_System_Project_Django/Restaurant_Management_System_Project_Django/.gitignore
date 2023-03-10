@@ -1,0 +1,7 @@
+venv/*
+myvenv/*
+.idea/*
+hotel/__pycache__/
+.vscode/
+reflex/__pycache__/
+hotel/migrations/

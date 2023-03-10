@@ -1,0 +1,144 @@
+{% load static %}
+{% load mathfilters %}
+{% include "includes/landing_top.html" %}
+
+<body>
+	<script src="{% static 'js/jquery.vide.min.js' %}"></script>
+	<div data-vide-bg="{% static 'video/bg.jpg' %}">
+		<!-- banner -->
+		{% include "includes/banner.html" %}
+		<!-- //banner -->
+	</div>
+	<!-- special -->
+	<div class="special">
+		<div class="container">
+			<div class="special-heading">
+				<h3>Today Specials</h3>
+			</div>
+			<div class="special-grids">
+			{% for f in food %}
+					<div class="col-md-4 w3l-special-grid">
+						<a href="{% url 'hotel:food_details' f.id %}">
+							<div class="col-md-6 w3ls-special-img" style="background: url('/media/{{f.image}}') no-repeat -17px 0px; background-size: cover;">
+								<div class="w3ls-special-text effect-1">
+									<h4>{{f.name|truncatechars:11}}</h4>
+								</div>
+							</div>
+						</a>
+
+						<div class="col-md-6 agileits-special-info">
+							<a href="{% url 'hotel:food_details' f.id %}"><h4>{{f.name|truncatechars:11}}</h4></a>
+							<p>{{f.content_description|truncatechars:90}}</p>
+						</div>
+					</div>
+			{% endfor %}
+					<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //special -->
+	<!-- features -->
+	<div class="features">
+		<div class="container">
+			<div class="features-heading">
+				<h3>Our Features</h3>
+			</div>
+			<div class="features-grids">
+				<div class="col-md-4 features-left">
+					<div class="features-left-info">
+					</div>
+				</div>
+				<div class="col-md-8 features-right">
+					<div class="features-right-info">
+						<h4>The best restaurants in Manila keep with the cosmopolitan feel of this city, which blends a myriad of influences from all around the world, both in its history and its cuisine. Filipino food itself has already been shaped by aboriginal, Spanish, North American, Indonesian and Chinese cuisines, so you’re almost certain to find something to your taste in Manila.</h3>
+					</div>
+					<div class="features-right-grids">
+						<div class="features-right-left">
+							<div class="features-right-icon effect-2">
+								<i class="fa fa-users" aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="features-right-right">
+							<p>Manila's dining scene includes an eclectic list of eateries which only have 1 point in common: they're mostly  are good. From upscale hotel’s restaurants to unpretentious budget cafés, and from local to international restaurants, the best places to eat in Manila are ready to serve you mouth-watering meals.</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="features-right-grids">
+						<div class="features-right-left">
+							<div class="features-right-icon effect-2">
+								<i class="fa fa-asterisk" aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="features-right-right">
+							<p>Café Ilang-Ilang is a luxurious restaurant located in the historic Manila Hotel. It’s known for an extensive buffet selection that includes Japanese cuisine, Italian, Chinese, western, Asian, Filipino, and more. Their live cooking stations ensure that the food is well presented and of the highest quality. Sample their salad station, cold cuts and seafood station, burrito and shawarma station, and bread and cheese station. </p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="features-right-grids">
+						<div class="features-right-left">
+							<div class="features-right-icon effect-2">
+								<i class="fa fa-money" aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="features-right-right">
+							<p>Sky Deck View Bar is a stylish lounge and restaurant on the rooftop of The Bayleaf Intramuros. The venue is a stunning sundowner spot, offering views over Manila Bay. Food-wise, you can enjoy both Filipino and international cuisine, served in big portions at fair rates. A live music band is in charge of the entertainment on some nights, but the highlight of the Sky Deck remains the sunset over Manila.</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="features-right-grids">
+						<div class="features-right-left">
+							<div class="features-right-icon effect-2">
+								<i class="fa fa-cog" aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="features-right-right">
+							<p>The Aristocrat is a long-established restaurant in the capital city of the Philippines, dating back to 1936. It's so successful that The Aristocrat has several branches throughout Manila. The restaurant serves a wide range of Filipino specialities at reasonable prices, though the house speciality of honey-cured chicken barbecue has been a favourite for generations. Drinks include beer, juices, soft drinks and mineral water.</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //features -->
+	<!-- customer -->
+	<div class="customer">
+		<div class="container">
+			<div class="customer-heading">
+				<h3>What Our Customers are Saying</h3>
+			</div>
+			<div class="customer-heading-grids">
+				<div class="col-md-4 customer-grid">
+					<div class="customer-info">
+						<p>Excellent Foods</p>
+					</div>
+					<div class="customer-img">
+						
+						<h5>Jude Angel Suares</h5>
+					</div>
+				</div>
+				<div class="col-md-4 customer-grid">
+					<div class="customer-info">
+						<p>Its the best foods I eat ever had</p>
+					</div>
+					<div class="customer-img">
+						
+						<h5>Adrian Mercurio</h5>
+					</div>
+				</div>
+				<div class="col-md-4 customer-grid">
+					<div class="customer-info">
+						<p>Super Tasty and Delicious</p>
+					</div>
+					<div class="customer-img">
+						
+						<h5>Niko Curaza</h5>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //customer -->
+	{% include "includes/footer.html" %}
